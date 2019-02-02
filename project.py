@@ -500,14 +500,7 @@ passdetails=get_passdetails(passnames) #saving all passwrords and usernames into
 logdata=login(username,p)
 if logdata[0]==2:
     student_login(logdata[1],logdata[2])
-    
-elif logdata[0]==0:
-    admin_login()
-    
-else:
-    teacher_login(logdata[1])
-       
-
+  
 to be done later
 
     * for teacher to get the list of studetnts with some criteria
