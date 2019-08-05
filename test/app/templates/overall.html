@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block body %}
+<style>
+.split {
+  height: 50%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  
+
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  
+}
+
+.right {
+  right: 0;
+  
+}
+</style>
+<script>
+function myFunction1() 
+{
+  var empt1 = document.form1.file.value;
+if (empt1 === "")
+{
+alert("Empty");
+return false;
+}
+else 
+{
+alert('cleared');
+return true; 
+}
+}
+function myfunction() 
+{
+  var empt2 = document.form1.file.value;
+if (empt2 ==="")
+{
+alert("Please select a file");
+return false;
+}
+else 
+{
+alert('File uploaded');
+return true; 
+}
+}
+function myFunction2() 
+{
+  var empt3 = document.form2.file1.value;
+if (empt3 === "")
+{
+alert("Empty");
+return false;
+}
+else 
+{
+alert('cleared');
+return true; 
+}
+}
+function myfunction1() 
+{
+  var empt4 = document.form2.file1.value;
+if (empt4 ==="")
+{
+alert("Please select a file");
+return false;
+}
+else 
+{
+alert('File removed');
+return true; 
+}
+}
+</script>
+<div class="jumbotron" style="width:100%; height=100%">
+<h1>Overall Report</h1>
+<p class="lead">CME AND CMS</p>
+<br>
+<br>
+{% for i in graph[:-1] %}
+<center>
+<br>
+<img src="data:image/png;base64,{{i[0]}}" />
+<br>
+Class details:{{i[1]}}
+{% endfor %}
+<br>
+<img src="data:image/png;base64,{{graph[-1]}}" />
+</div>
+<br><br><br><br><br>
+{% endblock %}
+
+<br>
+  <br>

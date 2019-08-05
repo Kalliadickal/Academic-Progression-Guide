@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block body %}
+<style>
+.split {
+  height: 50%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  
+
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  
+}
+
+.right {
+  right: 0;
+  
+}
+</style>
+<div class="jumbotron" style="width:100%; height=100%">
+<h1>Subject Analysis Report</h1>
+<p class="lead">CME AND CMS</p>
+<br>
+<br>
+<center>
+{% for j in slist%}
+<form action="/subwise" method="POST">
+<table>
+<tr>
+<td style="text-align:left">
+<h2>Semester {{loop.index}}&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+</td>
+<td style="text-align:center">
+<font size="4">
+<select name="subjectname">
+<option value="" selected disabled hidden>Select</option>
+{% for i in j%}
+<option>{{i}}</option>
+{% endfor %}
+</select>
+<font>
+</td>
+<td style="text-align:center">
+
+<span class="btn btn-file" width="50%" size="100">
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="subjectlist" class="btn btn-primary" value="Subject Report">
+</span>
+</form>
+</td>
+</tr>
+</table>
+{% endfor %}
+</div>
+<br><br><br><br><br>
+{% endblock %}
+<br>
+  <br>

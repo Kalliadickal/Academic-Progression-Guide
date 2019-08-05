@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Add a favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+      html,body,jumbotron,article,aside,details,figcaption,figure,
+      footer,header,hgroup,main,menu,nav,section,summary{
+    font-family: 'Rajdhani', sans-serif;
+      }
+    </style>
+    </head>
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            {% if session['logged_in'] == True %}
+            <li role="presentation"><a href="/aboutadminmain">Analysis</a></li>
+            <li role="presentation"><a href="/contact">Contact</a></li>
+            <li role="presentation"><a href="/logout">Logout</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+      {% block body %}
+      {% endblock %}
+	  <br>
+  <br>
+    </div> <!-- /container -->
+	
+  </body>
+  <footer class="container" style="text-align: center;">© 2019 Academic Progression Guide</footer>
+</html>
